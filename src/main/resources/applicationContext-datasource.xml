@@ -75,7 +75,7 @@
 
     <!--配置扫描dao接口包,动态实现dao接口，注入spring容器-->
 <bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="basePackage" value="com.mmall.do"/>
+    <property name="basePackage" value="com.mmall.dao"/>
 </bean>
 
     <!--声明事务管理-->

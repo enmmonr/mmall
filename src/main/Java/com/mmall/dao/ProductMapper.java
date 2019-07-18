@@ -1,6 +1,10 @@
 package com.mmall.dao;
 
 import com.mmall.pojo.Product;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 public interface ProductMapper {
     /**
@@ -50,4 +54,10 @@ public interface ProductMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Product record);
+
+    List<Product> getProductList();
+
+    List<Product> selectListByIdAndName(@Param("productId") Integer productId, @Param("productName") String productName);
+
+   List<Product> selectListByNameAndCategoryIds(@Param(value = "categoryIdList")List<Integer> categoryIdList,@Param(value = "productName")String productName);
 }

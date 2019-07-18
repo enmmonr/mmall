@@ -1,6 +1,10 @@
 package com.mmall.dao;
 
 import com.mmall.pojo.Category;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 public interface  CategoryMapper {
     /**
@@ -50,4 +54,7 @@ public interface  CategoryMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Category record);
+
+    //查找平级分类节点，返回一个集合
+    List<Category> getCategory(@Param("parent_id") Integer parent_id);
 }

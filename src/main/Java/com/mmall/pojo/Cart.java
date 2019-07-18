@@ -252,4 +252,9 @@ public class Cart {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "userID: "+this.getUserId()+" ,productId:"+this.getProductId()+",checked: "+this.getChecked();
+    }
 }
